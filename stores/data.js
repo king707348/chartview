@@ -1,9 +1,9 @@
 import { defineStore } from "pinia"
 
 export const useDataStore = defineStore("data", () => {
-    const data = ref(null)
+    const vdata = ref("vdata")
 
     return {
-        data
+        vdata
     }
 })

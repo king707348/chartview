@@ -1,7 +1,6 @@
 <template>
   <div>
     article
-    <slot />
   </div>
 </template>
 

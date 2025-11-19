@@ -4,10 +4,8 @@
 <script setup>
     definePageMeta({
         title: "首頁",
-        // layout: "default2"
+        layout: "default"
     })
-
-    console.log("page")
 </script>
 
 <style>
