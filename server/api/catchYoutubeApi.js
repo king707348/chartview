@@ -2,17 +2,20 @@
 // import { JWT } from 'google-auth-library'
 
 export default defineEventHandler(async (event) => {
+    const body = await readBody(event)
+    const { country } = body
+    console.log(country)
     try{
         const config = useRuntimeConfig()
         const baseUrl = "https://www.googleapis.com/youtube/v3/search"
 
         const queryParams = new URLSearchParams({
-            part: "snippet",
-            q: "vietnam travel",
-            maxResults: "10",
-            order: "viewCount",
+            key: config.YOUTUBE_API,
+            q: `${country || "vietnam" } travel`,
             type: "video",
-            key: config.YOUTUBE_API
+            part: "snippet",
+            maxResults: "10",
+            order: "viewCount"
         })
         const res = await fetch(`${baseUrl}?${queryParams.toString()}`)
         if(!res.ok){
@@ -26,7 +29,6 @@ export default defineEventHandler(async (event) => {
         }
 
     }catch(err){
-        console.log(err)
         return {
             result: "error",
             data: err.message
