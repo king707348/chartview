@@ -70,14 +70,13 @@ const result_staus = ref("pending");
 const videoBaseUrl = "https://www.youtube.com/watch?v=";
 
 const search = async () => {
-  //   const res = await $fetch("/api/catchYoutubeApi", {
-  const res = await $fetch("/api/test", { // 測試用
+    const res = await $fetch("/api/catchYoutubeApi", {
     method: "POST",
     body: {
-      country: input.value,
-    },
-  });
-  console.log(res);
+      country: input.value || "vietnam",
+    }
+  })
+
   if (res.data.result == "error") {
     result_staus.value = false;
     console.log(result_data.value);
@@ -85,7 +84,7 @@ const search = async () => {
   if (res.data.result == "ok") {
     result_staus.value = res.data.result;
 
-    result_data.value = res.data;
+    result_data.value = res.data.data;
     console.log(result_data.value);
   }
 }

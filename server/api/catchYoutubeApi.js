@@ -1,37 +1,20 @@
-// import { GoogleSpreadsheet } from 'google-spreadsheet'
-// import { JWT } from 'google-auth-library'
-
 export default defineEventHandler(async (event) => {
-    const body = await readBody(event)
-    const { country } = body
-    console.log(country)
-    try{
-        const config = useRuntimeConfig()
-        const baseUrl = "https://www.googleapis.com/youtube/v3/search"
+    const body = readBody(event);
+    const { country } = body;
 
-        const queryParams = new URLSearchParams({
-            key: config.YOUTUBE_API,
-            q: `${country || "vietnam" } travel`,
-            type: "video",
-            part: "snippet",
-            maxResults: "10",
-            order: "viewCount"
-        })
-        const res = await fetch(`${baseUrl}?${queryParams.toString()}`)
-        if(!res.ok){
-            throw new Error(`API ERROR: ${res.statusText}`)
-        }
-        const data = await res.json()
+    try {
+        const data = await fetchYoutube(country)
+
+        saveToSheet(data.data)
 
         return {
-            result: "ok",
             data: data
         }
 
-    }catch(err){
-        return {
-            result: "error",
-            data: err.message
-        }
+    }catch (error) {
+      return {
+        result: "error",
+        message: error.message,
+      };
     }
 })
