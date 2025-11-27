@@ -4,18 +4,18 @@
 ![Vue](https://img.shields.io/badge/Vue-3.5-4FC08D?style=flat&logo=vue.js)
 ![Node](https://img.shields.io/badge/Node-18%2B-339933?style=flat&logo=node.js)
 
-這是一個使用 **Nuxt.js 3** 框架開發的網頁應用，主要功能是讓使用者可以透過輸入關鍵字來搜尋相關的 YouTube 影片，並將搜尋結果即時儲存到 Google Sheets 中。
+這是一個使用 **Nuxt.js 4** 框架開發的網頁應用，主要功能是讓使用者可以透過輸入關鍵字來搜尋相關的 YouTube 影片，並將搜尋結果即時儲存到 Google Sheets 中。
 
-## ✨ 功能特色
+## 功能特色
 
-- 🎬 **影片搜尋**：輸入關鍵字搜尋 YouTube 影片（例如：國家名稱）
-- 🎯 **結果展示**：卡片式介面展示影片縮圖、標題和描述
-- ⏳ **互動回饋**：搜尋期間顯示等待訊息，無結果時提示用戶
-- 🔗 **直連 YouTube**：每個搜尋結果提供直接連結觀看完整影片
-- 📊 **資料記錄**：自動將搜尋結果記錄到指定的 Google Sheet 進行追蹤與分析
-- 📱 **響應式設計**：使用 Tailwind CSS 提供完美的行動端和桌面端體驗
+- **影片搜尋**：輸入關鍵字搜尋 YouTube 影片（例如：國家名稱）
+- **結果展示**：卡片式介面展示影片縮圖、標題和描述
+- **互動回饋**：搜尋期間顯示等待訊息，無結果時提示用戶
+- **直連 YouTube**：每個搜尋結果提供直接連結觀看完整影片
+- **資料記錄**：自動將搜尋結果記錄到指定的 Google Sheet 進行追蹤與分析
+- **響應式設計**：使用 Tailwind CSS 提供完美的行動端和桌面端體驗
 
-## 📸 功能演示
+## 功能演示
 
 ### 搜尋介面
 應用提供簡潔的搜尋介面，用戶可輸入關鍵字搜尋 YouTube 影片：
@@ -25,10 +25,10 @@
 所有搜尋結果自動記錄到 Google Sheets，方便進行資料分析與追蹤：
 ![Google Sheets 數據記錄](./public/google-sheets-data.png)
 
-## 🛠️ 使用技術
+## 使用技術
 
 ### 前端技術棧
-- **框架**: [Nuxt.js 3](https://nuxt.com/) - Vue 全棧框架
+- **框架**: [Nuxt.js 4](https://nuxt.com/) - Vue 全棧框架
 - **Vue.js 3** - 進階漸進式前端框架
 - **UI 元件庫**: [Element Plus](https://element-plus.org/) - 企業級 UI 庫
 - **狀態管理**: [Pinia](https://pinia.vuejs.org/) - 直觀的狀態管理
@@ -42,10 +42,9 @@
 
 ### 開發工具
 - **Vue DevTools** - 開發期間啟用
-- **TypeScript 支援**
 - **Composables** - 使用 [@vueuse/nuxt](https://vueuse.org/)
 
-## 🚀 快速開始
+## 快速開始
 
 ### 前置需求
 
@@ -67,7 +66,7 @@ GOOGLE_SHEET_ID=your_google_sheet_id_here
 
 ### 安裝步驟
 
-1. **複製或克隆此專案**
+1. **複製專案**
 
 ```bash
 git clone <repository-url>
@@ -88,7 +87,7 @@ npm run dev
 
 應用程式會在 `http://localhost:3000` 上運行。
 
-## 📝 可用指令
+## 可用指令
 
 ```bash
 # 開發模式
@@ -107,7 +106,7 @@ npm run generate
 npm run postinstall
 ```
 
-## 📂 專案結構
+## 專案結構
 
 ```
 chartview/
@@ -138,7 +137,7 @@ chartview/
 └── README.md                    # 專案文檔（此文件）
 ```
 
-## 🔄 工作流程
+## 工作流程
 
 ### 用戶搜尋流程
 
@@ -149,7 +148,7 @@ chartview/
 5. 前端接收數據並以卡片形式呈現結果
 6. 用戶可點擊結果直接前往 YouTube 觀看
 
-## 🔐 API 配置
+## API 配置
 
 ### YouTube API
 
@@ -167,7 +166,7 @@ chartview/
 
 詳細配置說明請參考各項服務的官方文檔。
 
-## 🌐 部署
+## 部署
 
 ### 構建生產版本
 
@@ -189,7 +188,7 @@ npm run generate
 
 應用支持 Node.js 和靜態部署。推薦使用 Vercel、Netlify 或其他支持 Nuxt 的平台進行部署。
 
-## 📚 相關資源
+## 相關資源
 
 - [Nuxt 文檔](https://nuxt.com/docs)
 - [Vue.js 文檔](https://vuejs.org/)
@@ -199,15 +198,15 @@ npm run generate
 - [YouTube API 文檔](https://developers.google.com/youtube/v3)
 - [Google Sheets API 文檔](https://developers.google.com/sheets/api)
 
-## 📄 授權
+## 授權
 
 此專案採用 MIT 授權。
 
-## 👤 開發者
+## 開發者
 
 由 king707348 開發
 
-## 🤝 貢獻
+## 貢獻
 
 歡迎提交 issue 和 pull request 來改進此專案！
 
