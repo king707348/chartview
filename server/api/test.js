@@ -2,9 +2,9 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { JWT } from "google-auth-library";
 
 export default defineEventHandler(async (event) => {
-  const body = readBody(event);
-  const { country } = body;
-  const config = useRuntimeConfig();
+  const body = readBody(event)
+  const { country } = body
+  const config = useRuntimeConfig()
 
   const data = {
     result: "ok", // OK or error

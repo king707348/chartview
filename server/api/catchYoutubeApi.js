@@ -1,6 +1,6 @@
 export default defineEventHandler(async (event) => {
-    const body = readBody(event);
-    const { country } = body;
+    const body = readBody(event)
+    const { country } = body
 
     try {
         const data = await fetchYoutube(country)

@@ -1,7 +1,8 @@
-import { GoogleSpreadsheet } from "google-spreadsheet";
-import { JWT } from "google-auth-library";
+import { GoogleSpreadsheet } from "google-spreadsheet"
+import { JWT } from "google-auth-library"
 
 export const saveToSheet = async (data) => {
+    const videoBaseUrl = "https://www.youtube.com/watch?v="
     const config = useRuntimeConfig()
 
     // 設定驗證
@@ -14,9 +15,9 @@ export const saveToSheet = async (data) => {
     const doc = new GoogleSpreadsheet(
       config.GOOGLE_SHEET_ID,
       serviceAccountAuth
-    );
+    )
     // 載入試算表資訊
-    await doc.loadInfo();
+    await doc.loadInfo()
     console.log("連線成功！試算表標題:", doc.title)
     const sheet = doc.sheetsByIndex[0]
 
@@ -27,7 +28,7 @@ export const saveToSheet = async (data) => {
     //   Id: db.id.videoId,
       Title: db.snippet.title,
       Description: db.snippet.description,
-      url: db.snippet.thumbnails.default.url,
+      url: `${videoBaseUrl}${db.id.videoId}`,
     //   Date: new Date().toLocaleString()
     }))
 

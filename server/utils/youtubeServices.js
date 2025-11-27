@@ -8,7 +8,8 @@ export const fetchYoutube = async (country) => {
     type: "video",
     part: "snippet",
     maxResults: "10",
-    order: "viewCount"
+    order: "viewCount",
+    videoDuration: "long",
   })
   const res = await fetch(`${baseUrl}?${queryParams.toString()}`)
   if (!res.ok) {
